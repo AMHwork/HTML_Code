@@ -1,0 +1,153 @@
+
+body {
+    background-color: white;
+    font-size: 90%;
+    color: black;
+    font-family: Tahoma, Arial, sans-serif;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+h1 {
+	font-weight: 400;
+	color: #6495ED;
+	text-align: center;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px
+	
+}
+
+h2 {
+	font-weight: 400;
+	color: #6495ED;
+	text-indent: 3%;
+	background-color:  lightgray;
+	margin: 0px;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+h3 {
+	font-weight: 400;
+	color: #6495ED;
+}
+
+input:focus {
+	background-color: #F0F8FF;
+	color: #6495ED;
+	border: 1px solid #6495ED;
+}
+
+label {
+	width: 250px;
+    display:inline-block;
+}
+
+.formBox {
+	display: inline-block;
+	margin-left: 5px;
+	border: 1px solid #6495ED;
+	padding: 0px;
+}
+
+.inputContainer {
+	padding :5px;
+	border-top: 1px solid black;
+}
+
+.insideContainer {
+	padding-top :5px;
+	padding-bottom :5px;
+}
+
+.rightside {
+	float: right;
+	width:49%;
+}
+
+.leftside {
+	float: left;
+	width: 49%;
+}
+
+.masterface {
+	width: 100%;
+	margin: auto;
+}
+
+fieldset{
+	width:98%;
+}
+
+.headingContainer {
+	background-color: lightgrey;
+}
+
+footer {
+	color: #6495ED;
+	background-color: lightgrey;
+	text-align: center;
+	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type=submit]{
+	width:95%;
+	background-color: lightblue;
+	color: white;
+	padding: 15px 20px;
+	margin-left : 20px;
+	margin-top : 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+input[type=submit]:hover{
+	background-color: blue;
+}
+
+#form-error {
+	color: red;
+	border-radius: 3px;
+	display: none;
+	padding:3px;
+    border: 1px solid #51061f;
+}
+
+.errorMessage {
+	color: red;
+	display: inline-block;
+}
+
+.radioSpace {
+    width: 59px;
+}
+
+.hidden {
+	display: none;
+}
+
+.radioLabel {
+	width: 40px;
+    display:inline-block;
+}
+
+.errorMessageBlock {
+	color: red;
+	display: block;
+}
+
+
+

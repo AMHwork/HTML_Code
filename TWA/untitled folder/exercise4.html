@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="RegoForm.css">
+    <script src="formValidation.js" type="text/javascript" defer></script>
+    <title>Patient Registration</title>
+  </head>
+  <body>
+  	<header>
+  		<div class="headingContainer"><h1>Patient Registration Form</h1></div>
+  	</header>
+  	<form id="personalDetails" method="post" action="http://tl28serv.westernsydney.edu.au/twainfo/form.asp" onsubmit="return  validate(this);">
+
+  		<div class="masterface">
+
+  		<div class="leftside">
+  			<fieldset class="formBox">
+  				<h2>Personal Details (Patient)</h2>
+  				<div class="inputContainer">
+  					<label class="radioLabel">Title:</label>  
+               <label class="radioSpace">
+               <input type="radio" name="title" value="Mr" id ="Mr" onclick="return hideOther()"> Mr
+               </label>
+               <label class="radioSpace">
+               <input type="radio" name="title" value="Mrs" id = "Mrs" onclick="return hideOther()"> Mrs
+               </label>
+               <label class="radioSpace">
+               <input type="radio" name="title" value="Miss" id = "Miss" onclick="return hideOther()"> Miss
+               </label>
+               <label class="radioSpace">
+               <input type="radio" name="title" value="Ms" id = "Ms"  onclick="return hideOther()"> Ms
+               </label>
+               <label class="radioSpace">
+               <input type="radio" name="title" value="Other" id = "other" onclick="return showOther()"> Other
+               </label>
+             <span class="radioSpace">
+                <input class = "hidden" type="text" name="Other" id="Other">
+             </span> 
+             <div class= "errorMessageBlock" id="validGender"></div>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="surname">Surname</label>
+  					<input type="text" name="surname" id="surname">
+            <div class= "errorMessage" id="validSurname"></div>
+          </div>
+  				<div class="inputContainer">
+  				    <label for="given">Given Name(s)</label>
+  				    <input type="text" name="given" id="given">
+              <div class= "errorMessage" id="validGiven"></div>
+  			 </div>
+  			    <div class="inputContainer">
+  				    <label for="previous">Previous Surname(s)</label>
+  				    <input type="text" name="previous" id="previous">
+              <div class= "errorMessage" id="validPrevious"></div>
+  			    </div>
+  			    <div class="inputContainer">
+  				    <label for="dob">Date of Birth</label>
+  				    <input type="text" name="dob" id="dob" placeholder="DD/MM/YYYY">  
+              <div class= "errorMessage" id="validDoB"></div>			
+  			    </div>
+  			    <div class="inputContainer">
+  					<label for="sex">Sex</label>
+  					<select name="sex" id="sex">
+  						<option value ="male">Male</option>
+  						<option value ="female">Female</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="country">Country of Birth</label>
+  				        <input type="text" name="country" id="country" onblur ="toggleState()"> 
+                  <div class= "errorMessage" id="validCountry"></div><br>
+  					</div>
+  					<div class="insideContainer, hidden" id="parentState">
+  					    <label for="state">State</label>
+  				      <input type="text" name="state" id="state" onblur="testState()">
+                <div class= "errorMessage" id="validState"></div>
+  				  </div>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="martial">Martial Status</label>
+  					<select name="martial" id="martial">
+  				        <option value ="single">Single</option>
+                  <option value ="married">Married</option>
+  				        <option value ="widowed">Widowed</option>
+  				        <option value ="separated">Separated</option>
+  				        <option value ="defacto">De Facto</option>
+  				        <option value ="divorced">Divorced</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="church">Do you wish to be visited by a Church Representatitive</label>
+  					<select name="church" id="church">
+  						    <option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				  </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="aboriginal">Aboriginal/Torres Strait Islander</label>
+  					<select name="aboriginal" id="aboriginal">
+  						<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="address">Address</label>
+  				        <input type="text" name="address" id="address">
+                  <div class= "errorMessage" id="validAddress"></div>
+  				    </div>
+  				    <div class="insideContainer">
+  						<label for="postcode">Postcode</label>
+  				        <input type="text"  name="postcode" id="postcode">
+                  <div class= "errorMessage" id="validPostcode"></div>
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="patientPhoneAH">Phone No.(AH)</label>
+  				        <input type="text"  name="patientPhoneAH" id="patientPhoneAH">
+                  <div class= "errorMessage" id="validpatientPhoneAH"></div>
+  				    </div>
+  				    <div class="insideContainer">
+  						<label for="patientPhoneBH">Phone No.(BH)</label>
+  				        <input type="text"  name="patientPhoneBH" id="patientPhoneBH">
+                  <div class= "errorMessage" id="validpatientPhoneBH"></div>
+  				    </div>
+  				</div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>Next of Kin/Contact Person.</h2>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="name">Name</label>
+  				        <input type="text" name="name" id="name">
+                  <div class= "errorMessage" id="validName"></div>
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinaddress">Address</label>
+  				        <input type="text" name="kinaddress" id="kinaddress">
+                  <div class= "errorMessage" id="validKinAddress"></div>
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinPhoneAH">Phone No.(AH)</label>
+  				        <input type="text" name="kinPhoneAH" id="kinPhoneAH">
+                  <div class= "errorMessage" id="validkinPhoneAH"></div>
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinPhoneBH">Phone No.(BH)</label>
+  				        <input type="text" name="kinPhoneBH" id="kinPhoneBH">
+                  <div class= "errorMessage" id="validkinPhoneBH"></div>
+  					</div>
+  					<div class="insideContainer">
+  						<label for="relation">Relationship to Patient</label>
+  				        <input type="text" name="relation" id="relation">
+                  <div class= "errorMessage" id="validRelation"></div>
+  					</div>
+  				</div>
+  				<div class="inputContainer">
+  				    <div class="insideContainer">
+  				    	<label for="medicare">Medicare No.</label>
+  				        <input type="text" name="medicare" id="medicare">
+                  <div class= "errorMessage" id="validMedicare"></div>
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="cardID">Card ID No.</label>
+  				        <input type="text" name="cardID" id="cardID">
+                  <div class= "errorMessage" id="validcardID"></div>
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="expireDate">Expiry Date</label>
+  				        <input type="text" name="date" id="expireDate" placeholder="MM/YYYY">
+                  <div class= "errorMessage" id="validExpireDate"></div>
+  				    </div>
+  			    </div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>Other Details</h2>
+  				<div class="inputContainer">
+  					<label for="gp">Name of you G.P.</label>
+  				    <input type="text" name="gp" id="gp">
+  				</div>
+  				<div class="inputContainer">
+  					<label for="xray">Have you been a patient in this Hosptial or had pathology/Xrays done here.</label>
+  				    <select name="xray" id="xray">
+  				    	<option  value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label>Do you have Private Health Insurance</label>
+            <label class="radioSpace">
+              <input type="radio" name="value" value="yes" id="yesInsurance" onclick="return showInsurance()"> Yes
+            </label>
+            <label class = "radioSpace">
+               <input type="radio" name="value" value="no" id= "noInsurance" onclick="return hideInsurance()"> No
+            </label>
+             <div class= "errorMessage" id="validInsuranceRadio"></div>
+  				</div>
+  			</fieldset>
+
+  		</div>
+
+  		<div class="rightside">
+  			<fieldset class="formBox, hidden" id="insuranceForm">
+  				<h2>Health Insurance Details</h2>
+  				<div class="inputContainer">
+  					<label for="fund">Name of Fund</label>
+  				    <input type="text" name="fund" id="fund">
+              <div class= "errorMessage" id="validFund"></div>
+  				</div>
+  				<div class="inputContainer">
+  				    <label for="membership">Membership No</label>
+  				    <input type="text" name="membership" id="membership">
+              <div class= "errorMessageBlock" id="validMemberShip"></div>
+  			    </div>
+  			    <div class="inputContainer">
+  			    	<label for="insuranceType">Level of Insurance</label>
+  			    	<select name="insuranceType" id="insuranceType">
+  			    		<option  value ="top">Top</option>
+  			    		<option value ="intermediate">Intermediate</option>
+  				        <option value ="basic">Basic</option>
+  				        <option value ="extras">Extras Only</option>
+  			    	</select>
+  			    </div>
+  			    <div class="inputContainer">
+                <label>Does an Excess Apply</label>
+                <label class="radioSpace">
+                  <input type="radio" name="value" value="yes" id="yesExcess" onclick="return showExcess()"> Yes
+                </label>
+                <label class = "radioSpace">
+                  <input type="radio" name="value" value="no" id= "noExcess" onclick="return hideExcess()"> No
+                </label>
+                <div class= "errorMessage" id="validExcessRadio"></div>
+                <div class="insideContainer, hidden" id="parentExcess">
+                   <label>Excess Amount</label>
+                   <input type="text" name="excess" id="excess" onblur= "testExcess()">
+                   <div class= "errorMessage" id="validExcess"></div>
+              </div>
+  			    </div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>WorkCare/TAC/Workers Comp.</h2>
+  				<div class="inputContainer">
+  					Approval must be obtained prior to admission. Correspondence verifying liability must be presented on admission
+  				</div>
+  				<div class="inputContainer">
+  					<label for="doi">Date of Injury/Accident</label>
+  				    <input type="text" name="doi" id="doi">  	
+  				</div>
+  				<div class="inputContainer">
+  					<label for="phone">Phone No</label>
+  				    <input type="text" name="phone" id="phone">
+  				</div>
+  				<div class="inputContainer">
+  					<label for="insCompany">Insurance Company</label>
+  				    <input type="text" name="insCompany" id="insCompany">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="claim">Claim No</label>
+  				    <input type="text" name="claim" id="claim">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="solicitor">Your Solicitor</label>
+  				    <input type="text" name="solicitor" id="solicitor">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="tacaddress">Address</label>
+  				    <input type="text" name="tacaddress" id="tacaddress">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="tacphone">Phone No</label>
+  				    <input type="text" name="tacphone" id="tacphone">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="workcare">If WorkCare/Workers Comp</label>
+  				    <input type="text" name="workcare" id="workcare">
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="employer">Employer</label>
+  				        <input type="text" name="Employer" id="employer">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="employeraddress">Address</label>
+  				        <input type="text" name="employeraddress" id="employeraddress">
+  					</div>
+  				</div>
+  				<div class="inputContainer">
+  					<b>Private Insurance</b><br>
+  				    If you elect to be private patient, the Hospital will claim bed fees on your behalf. Pleace bring your memebership book at time of admission.
+  				</div>
+  			</fieldset>
+
+        <div>
+          <input type="submit" value="submit" id="submit-form">
+        </div>
+
+  		</div>
+  	</div>
+
+  </form>
+  </body>
+</html>

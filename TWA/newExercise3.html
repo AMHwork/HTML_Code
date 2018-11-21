@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="RegoForm.css">
+    <title>Patient Registration</title>
+  </head>
+  <body>
+  	<header>
+  		<div class="headingContainer"><h1>Patient Registration Form</h1></div>
+  	</header>
+  	<form id="personalDetails" method="post" action="http://tl28serv.westernsydney.edu.au/twainfo/form.asp">
+
+  		<div class="masterface">
+
+  		<div class="leftside">
+  			<fieldset class="formBox">
+  				<h2>Personal Details (Patient)</h2>
+  				<div class="inputContainer">
+  					<label for="title">Title</label>
+  					<select name="title" id="title">
+  						<option value="Mr">Mr</option>
+  						<option value="Mrs">Mrs</option>
+  				        <option value="Miss">Miss</option>
+  				        <option value="Ms">Ms</option>
+  				        <option value="Neither">Other</option>
+  				    </select>
+  				    <span class="specialContainer">
+  				    	<label for="Other">If Other. Please specify</label>
+  					    <input type="text" id="Other">
+  				    </span> 
+  				</div>
+  				<div class="inputContainer">
+  					<label for="surname">Surname</label>
+  					<input type="text" id="surname">
+  				</div>
+  				<div class="inputContainer">
+  				    <label for="given">Given Name(s)</label>
+  				    <input type="text" id="given">
+  			    </div>
+  			    <div class="inputContainer">
+  				    <label for="previous">Previous Surname(s)</label>
+  				    <input type="text" id="previous">
+  			    </div>
+  			    <div class="inputContainer">
+  				    <label for="dob">Date of Birth</label>
+  				    <input type="date" id="dob">  			
+  			    </div>
+  			    <div class="inputContainer">
+  					<label for="sex">Sex</label>
+  					<select name="sex" id="sex">
+  						<option value ="male">Male</option>
+  						<option value ="female">Female</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="country">Country of Birth</label>
+  				        <input type="text" id="country"><br>
+  					</div>
+  					<div class="insideContainer">
+  					    <label for="state">If Australia, what state</label>
+  				        <input type="text" id="state">
+  				    </div>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="martial">Martial Status</label>
+  					<select name="martial" id="martial">
+  						<option value ="married">Married</option>
+  				        <option value ="single">Single</option>
+  				        <option value ="widowed">Widowed</option>
+  				        <option value ="separated">Separated</option>
+  				        <option value ="defacto">De Facto</option>
+  				        <option value ="divorced">Divorced</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="church">Do you wish to be visited by a Chirch Representatitive</label>
+  					<select name="church" id="church">
+  						<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="aboriginal">Aboriginal/Torres Strait Islander</label>
+  					<select name="aboriginal" id="aboriginal">
+  						<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="address">Address</label>
+  				        <input type="text" id="address">
+  				    </div>
+  				    <div class="insideContainer">
+  						<label for="postcode">Postcode</label>
+  				        <input type="text" id="postcode">
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="patientPhoneAH">Phone No.(AH)</label>
+  				        <input type="text" id="patientPhoneAH">
+  				    </div>
+  				    <div class="insideContainer">
+  						<label for="patientPhoneBH">Phone No.(BH)</label>
+  				        <input type="text" id="patientPhoneBH">
+  				    </div>
+  				</div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>Next of Kin/Contact Person.</h2>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="name">Name</label>
+  				        <input type="text" id="name">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinaddress">Address</label>
+  				        <input type="text" id="kinaddress">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinPhoneAH">Phone No.(AH)</label>
+  				        <input type="text" id="kinPhoneAH">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="kinPhoneBH">Phone No.(BH)</label>
+  				        <input type="text" id="kinPhoneBH">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="relation">Relationship to Patient</label>
+  				        <input type="text" id="relation">
+  					</div>
+  				</div>
+  				<div class="inputContainer">
+  				    <div class="insideContainer">
+  				    	<label for="medicare">Medicare No.</label>
+  				        <input type="text" id="medicare">
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="cardID">Card ID No.</label>
+  				        <input type="text" id="cardID">
+  				    </div>
+  				    <div class="insideContainer">
+  				    	<label for="expireDate">Expiry Date</label>
+  				        <input type="date" id="expireDate">
+  				    </div>
+  			    </div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>Other Details</h2>
+  				<div class="inputContainer">
+  					<label for="gp">Name of you G.P.</label>
+  				    <input type="text" id="gp">
+  				</div>
+  				<div class="inputContainer">
+  					<label for="xray">Have you been a patient in this Hosptial or had pathology/Xrays done here.</label>
+  				    <select name="xray" id="xray">
+  				    	<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  				<div class="inputContainer">
+  					<label for="insurance">Do you have Private Health Insurance.</label>
+  				    <select name="insurance" id="insurance">
+  				    	<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  				    </select>
+  				</div>
+  			</fieldset>
+
+  		</div>
+
+  		<div class="rightside">
+  			<fieldset class="formBox">
+  				<h2>Health Insurance Details</h2>
+  				<div class="inputContainer">
+  					<label for="fund">Name of Fund</label>
+  				    <input type="text" id="fund">
+  				</div>
+  				<div class="inputContainer">
+  				    <label for="membership">Membership No</label>
+  				    <input type="text" id="membership">
+  			    </div>
+  			    <div class="inputContainer">
+  			    	<label for="insuranceType">Level of Insurance</label>
+  			    	<select name="insuranceType" id="insuranceType">
+  			    		<option value ="top">Top</option>
+  			    		<option value ="intermediate">Intermediate</option>
+  				        <option value ="basic">Basic</option>
+  				        <option value ="extras">Extras Only</option>
+  			    	</select>
+  			    </div>
+  			    <div class="inputContainer">
+  			    	<label for="excess">Does an Excess Apply</label>
+  			    	<select name="excess" id="excess">
+  			    		<option value ="yes">Yes</option>
+  				        <option value ="no">No</option>
+  			    	</select>
+  			    </div>
+  			    <div class="inputContainer">
+  			    	<label for="amount">Excess Amount</label>
+  				    <input type="text" id="amount">
+  			    </div>
+  			</fieldset>
+
+  			<fieldset class="formBox">
+  				<h2>WorkCare/TAC/Workers Comp.</h2>
+  				<div class="inputContainer">
+  					Approval must be obtained prior to admission. Correspondence verifying liability must be presented on admission
+  				</div>
+  				<div class="inputContainer">
+  					<label for="doi">Date of Injury/Accident</label>
+  				    <input type="date" id="doi">  	
+  				</div>
+  				<div class="inputContainer">
+  					<label for="phone">Phone No</label>
+  				    <input type="text" id="phone">
+  				</div>
+  				<div class="inputContainer">
+  					<label for="insCompany">Insurance Company</label>
+  				    <input type="text" id="insCompany">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="claim">Claim No</label>
+  				    <input type="text" id="claim">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="solicitor">Your Solicitor</label>
+  				    <input type="text" id="solicitor">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="tacaddress">Address</label>
+  				    <input type="text" id="tacaddress">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="tacphone">Phone No</label>
+  				    <input type="text" id="tacphone">
+  				</div>
+  				<div class="inputContainer">
+  				  	<label for="workcare">If WorkCare/Workers Comp</label>
+  				    <input type="text" id="workcare">
+  				</div>
+  				<div class="inputContainer">
+  					<div class="insideContainer">
+  						<label for="employer">Employer</label>
+  				        <input type="text" id="employer">
+  					</div>
+  					<div class="insideContainer">
+  						<label for="employeraddress">Address</label>
+  				        <input type="text" id="employeraddress">
+  					</div>
+  				</div>
+  				<div class="inputContainer">
+  					<b>Private Insurance</b><br>
+  				    If you elect to be private patient, the Hospital will claim bed fees on your behalf. Pleace bring your memebership book at time of admission.
+  				</div>
+  			</fieldset>
+
+  		</div>
+  	</div>
+
+  </form>
+
+  </body>
+</html>
